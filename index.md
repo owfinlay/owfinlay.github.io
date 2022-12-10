@@ -1,8 +1,3 @@
 I've a blog now-- this should be **fun**!
 
-
-
-I will use this blog to post about the things I'm interested in.
-
-Hello! I'm Oliver, with too much education and no solid background in anything.
-
+Hello! I'm Oliver. I have too much education and no solid talents or expertise. This is okay, because I am only 22. I have a bachelor's in neuroscience and I like podcasts where they use *smart* people words (a personal favorite is COMPLEXITY from the Santa Fe Institute). I would like to someday also use *smart* people words. It would be even better if people believe that I know what these words mean; and if I'm really, really lucky, maybe those people will come out of the conversation understanding some of them as well. 
