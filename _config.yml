@@ -6,12 +6,12 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: Bisquick Boiii
+title: OFBlog
 description: a blog because someone said I need one
 github_username: owfinlay
 
 # Email and twitter are optional:
-email: owlsfinlay@gmail.com
+email: owfinlay@outlook.com
 twitter_username:
 
 # Set this to true to get LaTeX math equation support
