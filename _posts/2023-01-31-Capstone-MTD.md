@@ -28,6 +28,26 @@ Select allows you to chose certain columns of a dataframe and turn them into a d
 
 Columns are named like this: "{year}/{mode}/{sentiment}", so slicing a column name with `<column_name>[:4]` will return just the year. And since, after that slicing, columns are named *just* for their year, vstack works like a charm.
 
+
+{Edit: I actually made two versions of this section and I assumed the dictionary one would be slower but upon testing it has been revealed that it's actually faster, so here's that one instead}
+
+**Faster dictionary version**
+```Python
+neg_dic = {}
+pos_dic = {}
+
+for i in df.columns[::2]:
+    neg_dic[i[:4]] = df[i]
+for i in df.columns[1::2]:
+    pos_dic[i[:4]] = df[i]
+
+pos_df = pl.DataFrame(pos_dic)
+neg_df = pl.DataFrame(neg_dic)
+
+better_df = pos_df.vstack(neg_df)
+```
+
+**Slower Polars version**
 ```Python
 better_df = df.select([
     
