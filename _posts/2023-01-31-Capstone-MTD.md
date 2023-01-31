@@ -22,6 +22,8 @@ filepath = os.path.join(path, filename)
 df = pl.read_csv(filepath)
 ```
 
+### Combining data
+
 The reviews were stored in a CSV with a column representing each bin of data--so each year's data was split into two different columns of either negative or positive reviews. I firstly wanted to combine these columns so each represented *all* of a given year's data; and to do this I chose to use Polars's [select](https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/api/polars.DataFrame.select.html#polars.DataFrame.select) and [vstack](https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/api/polars.DataFrame.vstack.html#polars.DataFrame.vstack) functions.
 
 Select allows you to chose certain columns of a dataframe and turn them into a dataframe; vstack allows you to stack these dataframes vertically. 
@@ -46,7 +48,7 @@ neg_df = pl.DataFrame(neg_dic)
 
 better_df = pos_df.vstack(neg_df)
 ```
-
+\n
 **Slower Polars version**
 ```Python
 better_df = df.select([
@@ -61,7 +63,8 @@ better_df = df.select([
         
         ]))
 ```
-
+\n
+### Recording metadata
 Next I started to use regular expression, or Regex, patterns to record data about the reviews. These are the Regex patterns I used.
 
 ```Python
@@ -114,7 +117,8 @@ mtd_df.write_csv("cap_reviews_metadata")
 
 better_df.write_csv("yearly_reviews")
 ```
-
+\n
+### Finding common words
 
 I also created a CSV with each year's most common words. I made two versions of this CSV, one with stop-words (common, inconsequential ones like "the", "is", and "or"). Here is the code for that part:
 
