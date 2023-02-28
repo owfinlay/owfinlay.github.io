@@ -63,7 +63,7 @@ def write_to_bin(reader, path_dictionary:dict):
     print("Done!")
     return
   
-#%% applying function to thing
+#%% applying function to the json reader object
   
 jreader =  pd.read_json\
     (dir_read + "/Final/yelp_academic_dataset_review.json", lines=True, chunksize=100_000)
@@ -75,20 +75,18 @@ for p in paths.keys():
     print(f"Path {p} has:\n   {len(paths[p][3])} files!")
   
 del(p)
-  
-#%%
-# =============================================================================
-#
-# Okay, we're done collecting data from the json. I ended up having to read it with pandas so
-# that I could chunk it properly. Then I switched to polars so that I could manipulate it better.
-#
-# All in all, this took like ten minutes to run (!!!!).
-#
-# Now I'm on to writing these strings to text files in the proper file structure and compacting that
-# structure so it's easier to load into Colab. Exciting things happening!
-#
-# =============================================================================
-  
+```
+
+ Okay, we're done collecting data from the json. I ended up having to read it with pandas so
+ that I could chunk it properly. Then I switched to polars so that I could manipulate it better.
+
+ All in all, this took like ten minutes to run.
+
+ Now I'm on to writing these strings to text files in the proper file structure and compacting that
+ structure so it's easier to load into Colab. Exciting things happening!
+
+
+```Python
 #%% imports
   
 import os
@@ -151,14 +149,11 @@ for p in paths.keys():
 tar.close()
   
 del(p, text)
-#%%
-# =============================================================================
-#
-# Now that that the file is created, I'm going to collect some metadata about the reviews themselves.
-#
-# Actually I'm just going to write the data to a csv and maybe try to do some analysis on that file.
-#
-# =============================================================================
+```
+ Now that that the file is created, I'm going to collect some metadata about the reviews themselves.
+
+ Actually I'm just going to write the data to a csv and maybe try to do some analysis on that file.
+```Python
 #%%
 cap_reviews = {}
 for p in paths.keys():
