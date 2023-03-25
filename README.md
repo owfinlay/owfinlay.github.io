@@ -1,3 +1,3 @@
-# noname blog
+# This blog
 
-... is a blog about things that confuse me! 
+Isn't real!
